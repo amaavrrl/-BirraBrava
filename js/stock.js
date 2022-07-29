@@ -4,7 +4,7 @@ const productos = [
         nombre:"Alfa",
         desc:"Cerveza rubia",
         precio:600,
-        img:'src../../imagenes/alfa.png',
+        img:'src../../../imagenes/alfa.png',
         cantidad:1
     },
     {
@@ -12,7 +12,7 @@ const productos = [
         nombre:"Beta",
         desc:"Cerveza Roja",
         precio:600,
-        img:'src../../imagenes/beta.png',
+        img:'src../../../imagenes/beta.png',
         cantidad:1
     },
     {
@@ -20,7 +20,7 @@ const productos = [
         nombre:"Gamma",
         desc:"Cerveza negra",
         precio:700,
-        img:'src../../imagenes/gamma.png',
+        img:'src../../../imagenes/gamma.png',
         cantidad:1
     },
     {
@@ -28,7 +28,7 @@ const productos = [
         nombre:"Delta",
         desc:"Cerveza rubia",
         precio:700,
-        img:'src../../imagenes/delta.png',
+        img:'src../../../imagenes/delta.png',
         cantidad:1
     },
     {
@@ -36,7 +36,7 @@ const productos = [
         nombre:"Epsilon",
         desc:"Cerveza roja",
         precio:600,
-        img:'src../../imagenes/epsilon.png',
+        img:'src../../../imagenes/epsilon.png',
         cantidad:1
     },
 ]
