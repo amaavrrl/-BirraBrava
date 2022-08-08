@@ -18,13 +18,23 @@ export const carrito = (productoId) => {
     div.innerHTML = `<p>${producto.nombre}</p>
                         <p>Precio: ${producto.precio}</p> 
                         <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
-                        <button id="eliminar${producto.id}" class="boton-eliminar" ><i class="fa-solid fa-trash-can"></i></button>
+                        <button class="boton-eliminar" id="eliminar${producto.id}"><i class="fa-solid fa-trash-can"></i></button>
             `;
     contenedorCarrito.appendChild(div);
 
-    //SUMA DE PRODUCTOS
   };
   renderProductoCarrito();
 };
+
+//para que se quede guardado en el localstorage lo que se guardó en carrito pero no funciona
+/*
+let carritoStorage = JSON.parse(localStorage.getItem("carritoCompras"));
+
+if (carritoStorage){
+  carrito = carritoStorage;
+}else{
+  carrito = [];
+}
+*/
 
 export { carritoCompras };

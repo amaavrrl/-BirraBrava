@@ -10,13 +10,13 @@ const mostrarProductos = (productos) => {
   productos.forEach((producto) => {
     const div = document.createElement("div");
     div.classList.add("card");
-    div.innerHTML += `<div class="card" style="width: 18rem;">
+    div.innerHTML += `<div class="card text-center text-bg-light " style="width: 18rem;">
                             <img src="${producto.img}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${producto.nombre}</h5>
                                 <p class="card-text">${producto.desc}</p>
                                 <p class="card-text">Precio: $ ${producto.precio}</p>
-                                <button class="btn btn-primary agregar" id=boton${producto.id}>Añadir a carrito</button>
+                                <button class="btn btn-warning btn-lg agregar" id=boton${producto.id}>Añadir a carrito</button>
                             </div>
                         </div>`;
 
@@ -28,7 +28,13 @@ const mostrarProductos = (productos) => {
       carritoCompras.push(producto);
       carritoTamanio = carritoCompras.length;
       console.log(carritoTamanio);
-      alert(`Se agrego ${producto.nombre}`);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: `Has agregado ${producto.nombre} al carrito`,
+        showConfirmButton: false,
+        timer: 1500
+      })
     });
   });
 };
