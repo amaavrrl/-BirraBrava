@@ -1,5 +1,8 @@
 /* formulario */
-
+.header{
+  text-align: center;
+  margin-bottom: 2rem;
+}
   
   .bigicon {
     font-size: 35px;
@@ -16,10 +19,8 @@
   /* titulo de seccion productos */
 
  .tituloTienda{
-  font-family: 'Croissant One', cursive;
   text-align: center;
-  padding-top: 7rem;
-  font-size: 50px;
+  padding-top: 3rem;
  }
 
 
@@ -47,7 +48,7 @@
 
 #producto-contenedor {
     display: grid;
-    margin: 90px auto;
+    margin: 30px auto;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
