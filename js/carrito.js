@@ -21,10 +21,22 @@ export const carrito = (productoId) => {
                         <button class="boton-eliminar" id="eliminar${producto.id}"><i class="fa-solid fa-trash-can"></i></button>
             `;
     contenedorCarrito.appendChild(div);
+const cantidadProductos = Object.values(productos).reduce((acc,{cantidad}) => acc + cantidad,0)
+console.log(cantidadProductos)
 
+    //const botonEliminar = document.getElementById(`eliminar${producto.id}`);
+
+   // botonEliminar.addEventListener("click", () => {
+ //     carritoCompras.splice(0, producto.id);
+ //   });
+
+ 
   };
+
   renderProductoCarrito();
 };
+
+
 
 //para que se quede guardado en el localstorage lo que se guardó en carrito pero no funciona
 /*

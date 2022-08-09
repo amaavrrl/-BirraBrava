@@ -3,6 +3,7 @@ import { carrito } from "./carrito.js";
 import { carritoCompras } from "./carrito.js";
 
 let carritoTamanio = 0;
+const totalCarrito = document.createElement("p");
 
 const mostrarProductos = (productos) => {
   const contenedorProductos = document.getElementById("producto-contenedor");
@@ -27,14 +28,32 @@ const mostrarProductos = (productos) => {
       carrito(producto.id);
       carritoCompras.push(producto);
       carritoTamanio = carritoCompras.length;
-      console.log(carritoTamanio);
+      console.log("Tengo en el carrito: ", carritoTamanio);
+      document.getElementById("contador-carrito").textContent = carritoTamanio;
+
+      //total carrito
+      const sumaTotal = carritoCompras.reduce((acc, el) => acc + el.precio, 0)
+      totalCarrito.textContent = `Total: $${sumaTotal}`;
+      
+      montoTotal.appendChild(totalCarrito);
+
+
+      //para que aparezca botón de finalizar una vez que el carrito tenga algún producto:
+      if (carritoTamanio == 1) {
+        const botonFinalizar = document.createElement("button");
+        botonFinalizar.textContent = "Finalizar carrito";
+        finalizar.appendChild(botonFinalizar);
+      } else if (carritoTamanio == 0) {
+        // eliminar
+      }
+
       Swal.fire({
-        position: 'top-end',
-        icon: 'success',
+        position: "top-end",
+        icon: "success",
         title: `Has agregado ${producto.nombre} al carrito`,
         showConfirmButton: false,
-        timer: 1500
-      })
+        timer: 1500,
+      });
     });
   });
 };
@@ -44,13 +63,9 @@ const guardar = (clave, valor) => {
 };
 
 for (const producto of productos) {
-  guardar(producto.id, JSON.stringify (producto));
+  guardar(producto.id, JSON.stringify(producto));
 }
 
 localStorage.setItem("productos", JSON.stringify(productos));
-
-console.log(carritoTamanio);
-
-document.getElementById("contador-carrito").textContent = carritoTamanio;
 
 mostrarProductos(productos);
