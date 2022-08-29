@@ -1,12 +1,10 @@
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// validación de formulario:
+
 (() => {
   "use strict";
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll(".needs-validation");
 
-  // Loop over them and prevent submission
   Array.from(forms).forEach((form) => {
     form.addEventListener(
       "submit",
@@ -45,7 +43,6 @@
     }
   };
 
-
   let phone = document.getElementById("phone");
   phone.oninput = () => {
     const phoneValidation = document.getElementById("phone");
@@ -56,7 +53,31 @@
       phone.classList.remove("is-invalid");
       phone.setCustomValidity("");
     }
-
   };
 })();
 
+//Para que se envíe un mail con mail JS usando FETCH:
+
+const formulario = document.getElementById("formulario");
+const btn = document.getElementById("enviarMail");
+
+document
+  .getElementById("formulario")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    btn.value = "Enviando...";
+
+    const serviceID = "default_service";
+    const templateID = "template_qb9rwdb";
+
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btn.value = "Enviar";
+      },
+      (err) => {
+        btn.value = "Enviar";
+        alert(JSON.stringify(err));
+      }
+    );
+  });

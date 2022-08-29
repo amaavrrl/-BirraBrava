@@ -15,16 +15,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <!-- fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/f580711539.js" crossorigin="anonymous"></script>
+  <!-- fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Ubuntu&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f580711539.js" crossorigin="anonymous"></script>
   </script>
 
 </head>
 
 <body>
+  <!-- navbar -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -48,6 +49,7 @@
             </li>
             <li class="nav-item ">
               <button class="nav-link text-body position-relative" id="open" href="#">
+                <!-- botón de carrito -->
                 <span class="badge position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-light "
                   id="contador-carrito">0</span>
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -60,8 +62,9 @@
 
   </header>
   <section class="tituloTienda">
-    <img  src="/imagenes/titulo_tienda.jpg" alt="">
+    <img src="/imagenes/titulo_tienda.jpg" alt="">
   </section>
+  <!-- productos: -->
   <main id="producto-contenedor">
     <!-- modal que guarda el carrito -->
 
@@ -72,7 +75,9 @@
         <h3 class="modal__titulo">Carrito</h3>
         <div id="carrito-contenedor"></div>
         <div id="montoTotal"></div>
-        <div id="finalizar"></div>
+        <div id="vaciar"></div>
+        <div id="finalizar">
+        </div>
       </div>
     </div>
   </main>

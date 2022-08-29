@@ -1,216 +1,249 @@
 /* formulario */
-.header{
+.header {
   text-align: center;
   margin-bottom: 2rem;
 }
-  
-  .bigicon {
-    font-size: 35px;
-    color: black;
-  }
-    /* titulo navbar*/
 
-  .titulo{
-    color: rgb(221, 204, 17);
-    font-family: 'Croissant One', cursive;
-    font-size: 50px
+.bigicon {
+  font-size: 35px;
+  color: black;
+}
+/* titulo navbar*/
 
-  }
-  /* titulo de seccion productos */
+.titulo {
+  color: rgb(221, 204, 17);
+  font-family: "Croissant One", cursive;
+  font-size: 50px;
+}
 
- .tituloTienda{
+legend h2 {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+}
+/* titulo de seccion productos */
+
+.tituloTienda {
   text-align: center;
   padding-top: 3rem;
- }
+}
 
+/* formulario */
+.caption-center {
+  top: 30%;
+}
 
-  /* formulario */
-  .caption-center{
-    top: 30%;
-  }
+#botonEnviar {
+  margin-bottom: 30px;
+}
 
-  #botonEnviar {
-    margin-bottom: 30px;
-  }
-  
-  
-  .gridFormulario {
-    display: flex;
-    display: column;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    flex-direction: row;
-  
-  }
-  
+.gridFormulario {
+  display: flex;
+  display: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  flex-direction: row;
+}
 
 #producto-contenedor {
-    display: grid;
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-} 
-
+  display: grid;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 .card .card-image .card-title {
-    color: dodgerblue;
-    position: unset;
-}  
+  color: dodgerblue;
+  position: unset;
+}
 
-.card{
-    margin: 20px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 25px 0px;
+.card {
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 25px 0px;
 }
 
 /* Modal */
 .modal-container {
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed; 
-    background-color: transparent;
-    bottom: 0;
-    right: 0;
-    height: 100vh;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    border-radius: 10px ;
-    z-index: 100;
-  } 
-  
-  /* hacer visible el modal  */
-  .modal-active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 5;
-  }
-  
-  .modal-carrito{
-    width: 20rem;
-    height: 100vh;
-    background-color: rgb(211, 211, 211);
-    position:  relative;
-    padding: 1rem; 
-    padding-top: 3rem; 
-    font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: transparent;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  z-index: 100;
+}
+/* titulo carrusel */
+.tituloCarrusel1{
+  font-family: 'Khula', sans-serif;
+  color: #212529;
+  font-size: 3.4rem;
+}
 
-  }
-  
-  
-  .productoEnCarrito {
-    border-left: 5px solid rgb(4, 5, 5);
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
-    margin: 5px 0;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Ubuntu', sans-serif
-  }
-  
-  .modal__titulo{
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .botonCerrar{
-    margin-bottom: 1rem;
-  }
+.tituloCarrusel2{
+  font-family: 'Khula', sans-serif;
+  color: #212529;
+  font-size: 3.4rem;
+}
 
-  .boton-eliminar {
-    background-color: rgb(211, 211, 211);
-    color: rgb(4, 5, 5);
-    border: none;
-    font-size: 20px;
-  }
-  
-  footer {
-    height: 90px;
-    background-color: black;
-    color: white;
-    display: flex;
+.subtituloCarrusel{
+  font-size: 1.5rem;
+}
+
+.fondoTexto{
+  background-color: #FFCA2C;
+  padding: 8px;
+}
+.fondoTexto2{
+  background-color: #212529;
+  padding: 8px;
+}
+
+/* hacer visible el modal  */
+.modal-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+.modal-carrito {
+  width: 20rem;
+  height: 100vh;
+  background-color: rgb(211, 211, 211);
+  position: relative;
+  padding: 1rem;
+  padding-top: 3rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.productoEnCarrito {
+  border-left: 5px solid rgb(4, 5, 5);
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Ubuntu", sans-serif;
+}
+
+
+.modal__titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.botonCerrar {
+  margin-bottom: 1rem;
+}
+#finalizar{
+  text-align: center;
+  margin-top: 1rem;
+
+}
+#vaciar{
+  text-align: center;
+
+}
+.boton-eliminar {
+  background-color: rgb(211, 211, 211);
+  color: rgb(4, 5, 5);
+  border: none;
+  font-size: 20px;
+}
+
+footer {
+  height: 90px;
+  background-color: black;
+  color: white;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-    
-    /* ======================== */
-    .icons {
-        display: flex;
-        column-gap: 25px;
-        
-        
-        
-    }
-    
-    .icon {
-        width: 40px;
-        height: 40px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        font-size: 26px;
-        color: #fff;
-        border-radius: 50%;
-        outline: 2px solid #fff;
-        transition-property:
-            outline-offset, outline-color,
-            background-color;
-        transition-duration: .25s;
-        
-    }
-    
-    .icon:hover {
-        outline-offset: 4px;
-    }
-    
-    .icon:hover i {
-        animation: shake .25s;
-    }
-    
-    .icon--instagram:hover {
-        background-image: radial-gradient(circle at 30% 107%,
-                #fdf497 0%, #fdf497 5%,
-                #fd5949 45%, #d6249f 60%,
-                #285AEB 90%);
-        outline-color: #a02d76;
-    }
-    
-    .icon--twitter:hover {
-        background-color: #1da1f2;
-        outline-color: #1da1f2;
-    }
-    
-    .icon--linkedin:hover {
-        background-color: #0077b5;
-        outline-color: #0077b5;
-    }
-    
-    .icon--github:hover {
-        background-color: #2ea44f;
-        outline-color: #2ea44f;
-    }
-    
-    @keyframes shake {
-        10% {
-            transform: rotate(15deg);
-        }
-    
-        20% {
-            transform: rotate(-15deg);
-        }
-    
-        30% {
-            transform: rotate(15deg);
-        }
-    
-        40% {
-            transform: rotate(-15deg);
-        }
-    }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+/* footer*/
+.icons {
+  display: flex;
+  column-gap: 25px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 50%;
+  outline: 2px solid #fff;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: 0.25s;
+}
+
+.icon:hover {
+  outline-offset: 4px;
+}
+
+.icon:hover i {
+  animation: shake 0.25s;
+}
+
+.icon--instagram:hover {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  outline-color: #a02d76;
+}
+
+.icon--twitter:hover {
+  background-color: #1da1f2;
+  outline-color: #1da1f2;
+}
+
+.icon--linkedin:hover {
+  background-color: #0077b5;
+  outline-color: #0077b5;
+}
+
+.icon--github:hover {
+  background-color: #2ea44f;
+  outline-color: #2ea44f;
+}
+
+@keyframes shake {
+  10% {
+    transform: rotate(15deg);
+  }
+
+  20% {
+    transform: rotate(-15deg);
+  }
+
+  30% {
+    transform: rotate(15deg);
+  }
+
+  40% {
+    transform: rotate(-15deg);
+  }
+}
+
