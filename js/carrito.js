@@ -2,56 +2,18 @@ import { productos } from "./stock.js";
 
 let carritoCompras = [];
 
-export const carrito = (productoId) => {
-  const contenedorCarrito = document.getElementById("carrito-contenedor");
-
-  const renderProductoCarrito = () => {
-    let producto = productos.find((producto) => producto.id == productoId);
-    //carritoCompras.push(producto)
-
-    producto.cantidad = 1;
-
-    let div = document.createElement("div");
-
-    div.classList.add("productoEnCarrito");
-
-    div.innerHTML = `<p>${producto.nombre}</p>
-                        <p>Precio: ${producto.precio}</p> 
-                        <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
-                        <button class="boton-eliminar" id="eliminar${producto.id}"><i class="fa-solid fa-trash-can"></i></button>
-            `;
-    contenedorCarrito.appendChild(div);
-    //const cantidadProductos = Object.values(productos).reduce(
-    //  (acc, { cantidad }) => acc + cantidad,
-    //  0
-    //);
-    console.log(carritoCompras);
-  };
-
-  renderProductoCarrito();
-
-
-  
-};
-
-//para que se quede guardado en el localstorage lo que se guardó en carrito pero no funciona
-/*
-let carritoStorage = JSON.parse(localStorage.getItem("carritoCompras"));
-
-if (carritoStorage){
-  carrito = carritoStorage;
-}else{
-  carrito = [];
-}
-*/
-
 let carritoTamanio = 0;
 const totalCarrito = document.createElement("p");
 
 let botonVaciar = document.createElement("button");
 const botonFinalizar = document.createElement("button");
 
-const mostrarProductos = (productos) => {
+const mostrarProductos = async () => {
+  //Uso de fetch para llamar a los productos:
+
+  const response = await fetch("./data.json");
+  const productos = await response.json();
+
   const contenedorProductos = document.getElementById("producto-contenedor");
 
   productos.forEach((producto) => {
@@ -71,7 +33,7 @@ const mostrarProductos = (productos) => {
 
     let boton = document.getElementById(`boton${producto.id}`);
     boton.addEventListener("click", () => {
-      carrito(producto.id);
+      actualizarCarrito (producto.id);
       carritoCompras.push(producto);
       carritoTamanio = carritoCompras.length;
       console.log("Tengo en el carrito: ", carritoTamanio);
@@ -108,13 +70,43 @@ const mostrarProductos = (productos) => {
         showConfirmButton: false,
         timer: 1500,
       });
-
-      
     });
   });
 };
+  
+
+  function actualizarCarrito (productoId) {
+  const contenedorCarrito = document.getElementById("carrito-contenedor");
+
+  function renderProductoCarrito ()  {
+    let producto = productos.find((producto) => producto.id == productoId);
+    //carritoCompras.push(producto)
+
+    producto.cantidad = 1;
+
+    let div = document.createElement("div");
+
+    div.classList.add("productoEnCarrito");
+
+    div.innerHTML = `<p>${producto.nombre}</p>
+                        <p>Precio: ${producto.precio}</p> 
+                        <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
+                        <button class="boton-eliminar" id="eliminar${producto.id}"><i class="fa-solid fa-trash-can"></i></button>
+            `;
+    contenedorCarrito.appendChild(div);
+    
+    
+  };
+  localStorage.setItem("carritoCompras", JSON.stringify(carritoCompras))
+  renderProductoCarrito();
+};
+
+
+
+
 
 // vaciar carrito
+
 function vaciarCarrito() {
   let vaciarCarritoBtn = document.getElementById("vaciar");
   vaciarCarritoBtn.addEventListener("click", function () {
@@ -126,23 +118,30 @@ function vaciarCarrito() {
       showConfirmButton: false,
       timer: 1500,
     });
-    console.log(carritoCompras.length)
+    console.log(carritoCompras.length);
+
+    //eliminar el local storage cuando vacian carrito:
+     localStorage.clear();
+ 
+   
   });
+
 }
+
+//Me traigo del local storage si hay procutos en el local storage
+let carritoLS = JSON.parse(localStorage.getItem('carritoCompras'))
+
+if (carritoLS) {
+    carritoCompras = carritoLS
+    
+    console.log("FUNCIONA")
+}
+
+
+
+
 vaciarCarrito();
-
-// para que el carrito se guarde en localstorage:
-const guardar = (clave, valor) => {
-  localStorage.setItem(clave, valor);
-};
-
-for (const producto of productos) {
-  guardar(producto.id, JSON.stringify(producto));
-}
-
-localStorage.setItem("productos", JSON.stringify(productos));
+mostrarProductos();
 
 
-mostrarProductos(productos);
 
-export { carritoCompras };
